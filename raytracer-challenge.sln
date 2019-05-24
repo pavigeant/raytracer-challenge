@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3BF35317-211F-4F4A-B2A8-548909671866}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RayTracer", "src\RayTracer\RayTracer.csproj", "{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BF55623B-4DC4-4737-BF9D-9FA3733348A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RayTracer.Tests", "test\RayTracer.Tests\RayTracer.Tests.csproj", "{592BD412-14FF-4F6A-926E-0473AE02B0FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01685730-D977-4F3A-906F-425FF9CCF78E}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Debug|x64.Build.0 = Debug|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Release|x64.ActiveCfg = Release|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Release|x64.Build.0 = Release|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7}.Release|x86.Build.0 = Release|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Debug|x64.Build.0 = Debug|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x64.ActiveCfg = Release|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x64.Build.0 = Release|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7} = {3BF35317-211F-4F4A-B2A8-548909671866}
+		{592BD412-14FF-4F6A-926E-0473AE02B0FF} = {BF55623B-4DC4-4737-BF9D-9FA3733348A9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90BA3356-8873-4187-8DA1-5174226E3FBC}
+	EndGlobalSection
+EndGlobal
