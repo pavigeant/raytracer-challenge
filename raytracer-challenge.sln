@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayTracer.Challenge", "src\RayTracer.Challenge\RayTracer.Challenge.csproj", "{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,18 @@ Global
 		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x64.Build.0 = Release|Any CPU
 		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x86.ActiveCfg = Release|Any CPU
 		{592BD412-14FF-4F6A-926E-0473AE02B0FF}.Release|x86.Build.0 = Release|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Debug|x64.Build.0 = Debug|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Debug|x86.Build.0 = Debug|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Release|x64.ActiveCfg = Release|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Release|x64.Build.0 = Release|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Release|x86.ActiveCfg = Release|Any CPU
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +73,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DE79DB52-0E9A-4CD7-866D-9708813D6CC7} = {3BF35317-211F-4F4A-B2A8-548909671866}
 		{592BD412-14FF-4F6A-926E-0473AE02B0FF} = {BF55623B-4DC4-4737-BF9D-9FA3733348A9}
+		{944F458F-40F2-4A0D-93AB-AA6679FE3FC5} = {3BF35317-211F-4F4A-B2A8-548909671866}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90BA3356-8873-4187-8DA1-5174226E3FBC}
