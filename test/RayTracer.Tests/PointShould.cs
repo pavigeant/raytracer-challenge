@@ -1,5 +1,4 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
 namespace RayTracer.Tests
 {
@@ -39,17 +38,6 @@ namespace RayTracer.Tests
             var expected = new Vector(-2, -4, -6);
 
             var actual = p1 - p2;
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        [UnitTest]
-        public void GiveAVectorWhenSubstractingTwoVectors()
-        {
-            var v = new Vector(1, -2, 3);
-            var expected = new Vector(-1, 2, -3);
-
-            var actual = Vector.Zero() - v;
             Assert.Equal(expected, actual);
         }
 

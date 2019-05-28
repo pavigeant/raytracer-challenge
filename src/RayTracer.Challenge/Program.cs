@@ -9,7 +9,7 @@ namespace RayTracer.Challenge
             var projectile = new Projectile(new Point(0, 100, 0), new Vector(0, 0, 0));
             var environment = new Environment(new Vector(0, -9.8, 0), new Vector(0, 0, 0));
 
-            while((projectile = Tick(environment, projectile)).Position.Y > 0)
+            while ((projectile = Tick(environment, projectile)).Position.Y > 0)
             {
                 Console.WriteLine(projectile.Position);
             }
