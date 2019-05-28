@@ -32,16 +32,10 @@ namespace RayTracer
         /// <summary>
         /// Converts the point into a string representation using the format (R, G, B).
         /// </summary>
-        public override string ToString() => $"({R}, {G}, {B})";
+        public override string ToString() => $"Color [R={R}, G={G}, B={B}]";
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-
-            var c = (Color)obj;
-            return R.ApproximatelyEqual(c.R) && G.ApproximatelyEqual(c.G) && B.ApproximatelyEqual(c.B);
-        }
+        public override bool Equals(object obj) =>
+            obj is Color c && R.ApproximatelyEqual(c.R) && G.ApproximatelyEqual(c.G) && B.ApproximatelyEqual(c.B);
 
         public override int GetHashCode() => (R, G, B).GetTupleHashCode();
 
@@ -74,10 +68,5 @@ namespace RayTracer
         /// Moves the points by the factor provided.
         /// </summary>
         public static Color operator /(Color p, double factor) => p * (1 / factor);
-
-        /// <summary>
-        /// Returns the color Black.
-        /// </summary>
-        public static Color Black() => new Color(0, 0, 0);
     }
 }

@@ -34,14 +34,8 @@ namespace RayTracer
         /// </summary>
         public override string ToString() => $"[{X}, {Y}, {Z}]";
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-
-            var v = (Vector)obj;
-            return X.ApproximatelyEqual(v.X) && Y.ApproximatelyEqual(v.Y) && Z.ApproximatelyEqual(v.Z);
-        }
+        public override bool Equals(object obj) =>
+            obj is Vector p && X.ApproximatelyEqual(p.X) && Y.ApproximatelyEqual(p.Y) && Z.ApproximatelyEqual(p.Z);
 
         public override int GetHashCode() => (X, Y, Z).GetTupleHashCode();
 

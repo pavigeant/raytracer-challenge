@@ -32,14 +32,8 @@
         /// </summary>
         public override string ToString() => $"({X}, {Y}, {Z})";
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-
-            var p = (Point)obj;
-            return X.ApproximatelyEqual(p.X) && Y.ApproximatelyEqual(p.Y) && Z.ApproximatelyEqual(p.Z);
-        }
+        public override bool Equals(object obj) =>
+            obj is Point p && X.ApproximatelyEqual(p.X) && Y.ApproximatelyEqual(p.Y) && Z.ApproximatelyEqual(p.Z);
 
         public override int GetHashCode() => (X, Y, Z).GetTupleHashCode();
 
