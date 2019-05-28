@@ -40,7 +40,7 @@ namespace RayTracer
                 return false;
 
             var v = (Vector)obj;
-            return (X == v.X) && (Y == v.Y) && (Z == v.Z);
+            return X.ApproximatelyEqual(v.X) && Y.ApproximatelyEqual(v.Y) && Z.ApproximatelyEqual(v.Z);
         }
 
         public override int GetHashCode() => (X, Y, Z).GetTupleHashCode();
@@ -83,7 +83,7 @@ namespace RayTracer
         /// <summary>
         /// Creates a new vector that combine the first vector with the opposite of the second vector.
         /// </summary>
-        public static Vector operator -(Vector v1, Vector v2) => v1 + -v2;
+        public static Vector operator -(Vector v1, Vector v2) => new Vector(v1.X - v2.X, v1.Y - v2.Y, v1.Z - v2.Z);
 
         /// <summary>
         /// Returns the opposite of the vector.

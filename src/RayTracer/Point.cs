@@ -38,7 +38,7 @@
                 return false;
 
             var p = (Point)obj;
-            return (X == p.X) && (Y == p.Y) && (Z == p.Z);
+            return X.ApproximatelyEqual(p.X) && Y.ApproximatelyEqual(p.Y) && Z.ApproximatelyEqual(p.Z);
         }
 
         public override int GetHashCode() => (X, Y, Z).GetTupleHashCode();
@@ -56,7 +56,7 @@
         /// <summary>
         /// Moves the point by the size but opposite direction of the vector.
         /// </summary>
-        public static Point operator -(Point p, Vector v) => p + -v;
+        public static Point operator -(Point p, Vector v) => new Point(p.X - v.X, p.Y - v.Y, p.Z - v.Z);
 
         /// <summary>
         /// Negates a point.
