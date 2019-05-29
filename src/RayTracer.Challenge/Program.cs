@@ -1,18 +1,31 @@
 ﻿using System;
+using System.IO;
 
 namespace RayTracer.Challenge
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            var projectile = new Projectile(new Point(0, 100, 0), new Vector(0, 0, 0));
-            var environment = new Environment(new Vector(0, -9.8, 0), new Vector(0, 0, 0));
+            var start = new Point(0, 1, 0);
+            var velocity = new Vector(1, 1.8, 0).Normalize() * 11.25;
+            var projectile = new Projectile(start, velocity);
 
-            while ((projectile = Tick(environment, projectile)).Position.Y > 0)
+            var gravity = new Vector(0, -0.1, 0);
+            var wind = new Vector(-0.01, 0, 0);
+            var environment = new Environment(gravity, wind);
+            var canvas = new Canvas(900, 550);
+
+
+            var color = Color.FromRgb(1, 0, 0);
+            while ((projectile = Tick(environment, projectile)).Position.X < canvas.Width)
             {
-                Console.WriteLine(projectile.Position);
+                canvas.SetPixel((int)projectile.Position.X, canvas.Height - (int)projectile.Position.Y, color);
             }
+
+            using var writer = new StreamWriter(".\\test.ppm");
+            canvas.WritePpm(writer);
+            writer.Flush();
         }
 
         private static Projectile Tick(Environment env, Projectile proj)

@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a point in a 3D world where the origin is located at (0, 0, 0).
     /// </summary>
-    public class Point
+    public struct Point
     {
         public Point(double x, double y, double z)
         {

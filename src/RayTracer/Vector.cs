@@ -5,7 +5,7 @@ namespace RayTracer
     /// <summary>
     /// Represents a vector in a 3D world.
     /// </summary>
-    public class Vector
+    public struct Vector
     {
         public Vector(double x, double y, double z)
         {
