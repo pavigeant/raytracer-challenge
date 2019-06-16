@@ -6,12 +6,12 @@ namespace RayTracer
     {
         private const double Epsilon = 1E-15;
 
-        public static int GetTupleHashCode(this (double a, double b, double c) tuple)
+        public static int GetHashCode(params double[] array)
         {
             var result = 17;
-            result = result * 31 + tuple.a.GetHashCode();
-            result = result * 31 + tuple.b.GetHashCode();
-            result = result * 31 + tuple.c.GetHashCode();
+            foreach (var item in array)
+                result = result * 31 + item.GetHashCode();
+            
             return result;
         }
 
@@ -21,5 +21,8 @@ namespace RayTracer
         /// <see cref="https://stackoverflow.com/a/253874/151488"/>
         public static bool ApproximatelyEqual(this double a, double b, double epsilon = Epsilon) 
             => Math.Abs(a - b) <= ((Math.Abs(a) < Math.Abs(b) ? Math.Abs(b) : Math.Abs(a)) * epsilon);
+
+        public static bool ApproximatelyEqual(this double a, double b, int precision)
+            => Math.Round(a, precision) == Math.Round(b, precision);
     }
 }

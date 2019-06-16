@@ -1,9 +1,11 @@
-﻿namespace RayTracer
+﻿using System;
+
+namespace RayTracer
 {
     /// <summary>
     /// Represents a point in a 3D world where the origin is located at (0, 0, 0).
     /// </summary>
-    public struct Point
+    public struct Point : IEquatable<Point>
     {
         public Point(double x, double y, double z)
         {
@@ -32,10 +34,17 @@
         /// </summary>
         public override string ToString() => $"({X}, {Y}, {Z})";
 
-        public override bool Equals(object obj) =>
-            obj is Point p && X.ApproximatelyEqual(p.X) && Y.ApproximatelyEqual(p.Y) && Z.ApproximatelyEqual(p.Z);
+        public override int GetHashCode() => TypeHelper.GetHashCode(X, Y, Z);
 
-        public override int GetHashCode() => (X, Y, Z).GetTupleHashCode();
+        public bool Equals(Point other) => 
+            X.ApproximatelyEqual(other.X) && Y.ApproximatelyEqual(other.Y) && Z.ApproximatelyEqual(other.Z);
+
+        public override bool Equals(object obj) =>
+            obj is Point other && Equals(other);
+
+        public static bool operator ==(Point left, Point right) => left.Equals(right);
+
+        public static bool operator !=(Point left, Point right) => !left.Equals(right);
 
         /// <summary>
         /// Moves the point in by the size and direction of the vector.

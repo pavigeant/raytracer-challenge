@@ -5,7 +5,7 @@ namespace RayTracer
     /// <summary>
     /// Represents a vector in a 3D world.
     /// </summary>
-    public struct Vector
+    public struct Vector : IEquatable<Vector>
     {
         public Vector(double x, double y, double z)
         {
@@ -34,10 +34,17 @@ namespace RayTracer
         /// </summary>
         public override string ToString() => $"[{X}, {Y}, {Z}]";
 
-        public override bool Equals(object obj) =>
-            obj is Vector p && X.ApproximatelyEqual(p.X) && Y.ApproximatelyEqual(p.Y) && Z.ApproximatelyEqual(p.Z);
+        public override int GetHashCode() => TypeHelper.GetHashCode(X, Y, Z);
 
-        public override int GetHashCode() => (X, Y, Z).GetTupleHashCode();
+        public bool Equals(Vector other) =>
+            X.ApproximatelyEqual(other.X) && Y.ApproximatelyEqual(other.Y) && Z.ApproximatelyEqual(other.Z);
+
+        public override bool Equals(object obj) =>
+            obj is Vector other && Equals(other);
+
+        public static bool operator ==(Vector left, Vector right) => left.Equals(right);
+
+        public static bool operator !=(Vector left, Vector right) => !left.Equals(right);
 
         /// <summary>
         /// Returns the length, called the magnitude, of the vector.

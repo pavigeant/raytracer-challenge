@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace RayTracer
 {
     /// <summary>
     /// Represents a color of a point based on the three channels of red, green and blue.
     /// </summary>
-    public struct Color
+    public struct Color : IEquatable<Color>
     {
         private Color(double r, double g, double b)
         {
@@ -37,10 +36,17 @@ namespace RayTracer
         /// </summary>
         public override string ToString() => $"Color [R={R}, G={G}, B={B}]";
 
-        public override bool Equals(object obj) =>
-            obj is Color c && R.ApproximatelyEqual(c.R) && G.ApproximatelyEqual(c.G) && B.ApproximatelyEqual(c.B);
+        public override int GetHashCode() => TypeHelper.GetHashCode(R, G, B);
 
-        public override int GetHashCode() => (R, G, B).GetTupleHashCode();
+        public bool Equals(Color other) =>
+            R.ApproximatelyEqual(other.R) && G.ApproximatelyEqual(other.G) && B.ApproximatelyEqual(other.B);
+
+        public override bool Equals(object obj) =>
+            obj is Color other && Equals(other);
+
+        public static bool operator ==(Color left, Color right) => left.Equals(right);
+
+        public static bool operator !=(Color left, Color right) => !left.Equals(right);
 
         /// <summary>
         /// Creates a new color based on the reg, green and blue channels.
